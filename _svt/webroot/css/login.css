@@ -1,0 +1,28 @@
+*{ margin: 0;padding: 0;}
+
+body {margin: 0px 0px; font-family:Verdana,Arial,Helvetica,sans-serif;font-family: Verdana, Arial,Tahoma, sans-serif;font-size: 12px;}
+
+label {color:#000000;font-weight: bold;}
+
+fieldset {border:0px; }
+.fieldsetlog{background: url("../img/fondo.jpg") no-repeat top; width:480px; height:195px; padding:20px;margin:20px auto;}
+
+legend{font-weight:bold;font-size:20px;  color: #666; margin-left:30px;}
+.trform{width:100%;text-align:center;vertical-align:top;margin-top:5px;}
+.tdlabels{width:40%;float:left;margin-bottom:8px;text-align:center;}
+.tdimputs{width:60%; float:left;margin-bottom:8px;text-align:left; }
+
+#footer{height:25px; text-align: right;/*background:#F1F1F1;*/}
+
+#footer img{border:0;vertical-align:middle;}
+
+.msj{color:#990000;font-weight:bold;font-size:14px;}
+.txtEnca{color:#134ac8;font-weight:bold;}
+
+.trform .tdimputs input { width: 200px; background: url("../img/stripe.gif") #FFF repeat-x top; border:0; /* border-top:1px solid #ccc; border-left:1px solid #ccc; */ padding:3px; font-size:16px; }
+.trform .tdlabels label {font-family:"Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;  font-size:13px; color: #999;}
+
+
+.boton1{width:56px;height:23px;background:url("../img/boton1.gif");font-weight:bold;color:#ffffff;margin:10px 2px;border:none;padding-bottom:3px;}
+
+#content{clear:both;padding:15px 20px 10px 20px;text-align:center;margin:0 auto;}

@@ -1,0 +1,75 @@
+
+msgid "_TITULO"
+msgstr "Turismo dentro y fuera del pa&iacute;s | San Jose | Costa Rica | Sivetour S.A."
+
+msgid "_SEOH1"
+msgstr "Turismo dentro y fuera del pa&iacute;s | San Jose | Costa Rica | Sivetour S.A."
+
+msgid "_SEOH2"
+msgstr " |  San Jose | Costa Rica | Sivetour S.A."
+
+msgid "_VERMAS"
+msgstr "Ver m&aacute;s>>"
+
+msgid "_KEYWORDS"
+msgstr "viajes, cruseros, lugares, clubes de viajes, taca, avianca"
+
+msgid "_DESCRIPCION"
+msgstr "Sivetour S.A., todo en viajes"
+
+msgid "_INICIO"
+msgstr " Sivetour S.A., todo en viajes desde San jose, Costa Rica para el mundo"
+
+msgid "_FOTOS"
+msgstr "Fotos"
+
+msgid "_RESERVAR"
+msgstr "Reservar "
+
+msgid "_CRITERIO"
+msgstr "Criterio de Busqueda: "
+
+msgid "_BUSCAR"
+msgstr " Buscar "
+
+msgid "_CANTREGISTROS"
+msgstr "Registros encontrados: "
+
+msgid "_CANT_VISITAS"
+msgstr "Visitado "
+
+msgid "_VECES"
+msgstr " veces "
+
+msgid "_COMENTAR"
+msgstr " Comentar "
+
+msgid "_DIRECCION"
+msgstr "Direcci&oacute;n: "
+
+msgid "_FOTO"
+msgstr "Foto: "
+
+
+msgid "_ERRO_NAME"
+msgstr "Por favor, escriba su nombre"
+
+msgid "_ERRO_DIRECCION"
+msgstr "Por favor, digite su direccion."
+
+msgid "_ERRO_MENSAJE"
+msgstr "Por favor digide su mensaje"
+
+msgid "_ERRO_VEFCORREO"
+msgstr "Verifique su direccion de correo."
+
+msgid "_ERRO_RESULTOPERACION"
+msgstr "Por favor verifique el resultado de la operacion."
+
+msgid "_BOTTOM_EMAIL_SIGN"
+msgstr "<br/><br/>Saludos Cordiales<br/>
+<hr/><br/>Tel: (506) 2255 6565<br/>
+125 Norte del Centro Colon<br/>
+Paseo Colon, San Jose, Costa Rica"
+
+

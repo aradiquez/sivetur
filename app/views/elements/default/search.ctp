@@ -1,0 +1,1 @@
+<input type="text" placeholder="Search.." class="form-control logpadding" name="s"><br/>

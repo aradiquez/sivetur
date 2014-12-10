@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteCond %{REQUEST_FILENAME} !-d 
+   RewriteCond %{REQUEST_FILENAME} !-f
+   
+   RewriteRule    ^svt$ svt/   [L]
+   RewriteRule    (.svt) svt/$1 [L]
+   RewriteRule    ^$ app/webroot/    [L]
+   RewriteRule    (.*) app/webroot/$1 [L]
+</IfModule>
