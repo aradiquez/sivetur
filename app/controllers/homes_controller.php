@@ -79,5 +79,12 @@ class HomesController extends AppController{
 		$this->Oferta->unBindModel(array('hasAndBelongsToMany' => array('Tag'), 'hasMany' => array('Photos', 'FirstPhoto'), 'belongsTo' => array('ProgramasCircuito')));
 		return $this->Oferta->find('all', array('conditions' => array('programacircuito_id' => $params['Params']['categoria_footer_bloqueb']), 'fields' => $fields, 'limit' => 6, 'order' => 'prioridad'));
 	}
+  
+  function getRelated($oferta, $progcircuit){
+    $fields = array('name', 'precio');
+    $this->Oferta->unBindModel(array('hasAndBelongsToMany' => array('Tag'), 'hasMany' => array('Photos'), 'belongsTo' => array('ProgramasCircuito')));
+    return $this->Oferta->find('all', array('conditions' => array('programacircuito_id' => $progcircuit, 'id <> '.$oferta), 'fields' => $fields, 'limit' => 3, 'order' => 'rand()'));
+    
+  }
 }
 ?>

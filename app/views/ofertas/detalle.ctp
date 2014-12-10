@@ -18,13 +18,14 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 				<h4 class="lh1"><?=$oferta['Oferta']['name']?></h4>
 			</div>
 			<div class="line3"></div>
+      <br/>
 			<div class="hpadding20">
-				<h2 class="opensans slim green2">Wonderful!</h2>
+				<p><?=$oferta['Oferta']['introduccion']?></p>
 			</div>
 			<div class="line3 margtop20"></div>
 			<div class="clearfix"></div><br/>
 			<div class="hpadding20">
-				<a href="#" class="booknow margtop20 btnmarg">Book now</a>
+				<a href="#" class="booknow margtop20 btnmarg">Reserve ahora</a>
 			</div>
 		</div>
 		<!-- END OF RIGHT INFO -->
@@ -50,7 +51,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 				
 				<div id="collapse1" class="collapse">
 					<div class="hpadding20">
-						<?= $oferta['ProgramasCircuito']['detalle']?>
+						<?= $this->Text->truncate($oferta['ProgramasCircuito']['introduccion'],1500,array('ending' => '...','exact' => false))?><br/><br/> <? echo $html->link("Ver m&aacute;s informaci&oacute;n", array('controller' => 'programas_y_circuitos', 'action' => 'index',$oferta['ProgramasCircuito']['id'], slug($oferta['ProgramasCircuito']['name'])), array('class' => 'pull-right', 'escape' => false));?>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -98,7 +99,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 			</div>
 		</div>
 		
-		<?php echo $this->element("default/ofertas/_right_side"); ?>	
+		<?php echo $this->element("default/ofertas/_right_side", array('oferta', $oferta)); ?>	
 	</div>
   
   

@@ -1,47 +1,30 @@
 <div class="col-md-4" >	
-	<div class="pagecontainer2 testimonialbox">
-		<div class="cpadding0 mt-10">
-			<span class="icon-quote"></span>
-			<p class="opensans size16 grey2">It was very comfortable to stay and staff were pleasant and welcoming.<br/>
-			<span class="lato lblue bold size13"><i>by Ellison from United Kingdom</i></span></p> 
-		</div>
-	</div>
-	
+	<? $parametros = $this->requestAction('App/getParams'); ?>
 	<div class="pagecontainer2 mt20 needassistancebox">
 		<div class="cpadding1">
 			<span class="icon-help"></span>
-			<h3 class="opensans">Need Assistance?</h3>
-			<p class="size14 grey">Our team is 24/7 at your service to help you with your booking issues or answer any related questions</p>
-			<p class="opensans size30 lblue xslim">1-866-599-6674</p>
+			<h3 class="opensans">Necesitas ayuda?</h3>
+			<p class="size14 grey">Por favor si tiene alguna pregunta, sirvase llamar a nuestras oficinas en horario de 8:00 am a 5:00 pm</p>
+			<p class="opensans size30 lblue xslim"><?php echo $parametros['Params']['footer_telefono']?></p>
 		</div>
 	</div><br/>
 	
 	<div class="pagecontainer2 mt20 alsolikebox">
 		<div class="cpadding1">
 			<span class="icon-location"></span>
-			<h3 class="opensans">You May Also Like</h3>
+			<h3 class="opensans">Tambi&eacute;n te podr&iacute;a interesar</h3>
 			<div class="clearfix"></div>
 		</div>
-		<div class="cpadding1 ">
-			<a href="#"><img src="images/smallthumb-1.jpg" class="left mr20" alt=""/></a>
-			<a href="#" class="dark"><b>Hotel Amaragua</b></a><br/>
-			<span class="opensans green bold size14">$36-$160</span> <span class="grey">avg/night</span><br/>
-			<img src="images/filter-rating-5.png" alt=""/>
-		</div>
-		<div class="line5"></div>
-		<div class="cpadding1 ">
-			<a href="#"><img src="images/smallthumb-2.jpg" class="left mr20" alt=""/></a>
-			<a href="#" class="dark"><b>Hotel Amaragua</b></a><br/>
-			<span class="opensans green bold size14">$36-$160</span> <span class="grey">avg/night</span><br/>
-			<img src="images/filter-rating-5.png" alt=""/>
-		</div>
-		<div class="line5"></div>			
-		<div class="cpadding1 ">
-			<a href="#"><img src="images/smallthumb-3.jpg" class="left mr20" alt=""/></a>
-			<a href="#" class="dark"><b>Hotel Amaragua</b></a><br/>
-			<span class="opensans green bold size14">$36-$160</span> <span class="grey">avg/night</span><br/>
-			<img src="images/filter-rating-5.png" alt=""/>
-		</div>
-		<br/>
+    <? $related = $this->requestAction('homes/getRelated/'.$oferta['Oferta']['id']."/".$oferta['Oferta']['programacircuito_id'])?>
+    <? foreach($related as $relat) { ?>
+  		<div class="cpadding1 ">
+        <?=$html->link($this->Html->image('../fotos/fix_img.php?i='.$relat['FirstPhoto'][0]['name']."&amp;w=96&amp;h=61",  array('alt'=>$relat['Oferta']['name'], 'title'=>$relat['Oferta']['name'], 'class' => 'left mr20')), array('controller' => 'ofertas', 'action' => 'detalle',$relat['Oferta']['id'], slug($relat['Oferta']['name'])), array('escape' => false) );?>
+  			<?=$html->link("<b>".$relat['Oferta']['name']."</b>",  array('controller' => 'ofertas', 'action' => 'detalle',$relat['Oferta']['id'], slug($relat['Oferta']['name'])), array('escape' => false));?><br/>
+  			<span class="opensans green bold size14">$ <?php echo number_format($relat['Oferta']['precio'], 0)?></span><br/>
+  		</div>
+      <div class="clearfix"></div>
+  		<div class="line5"></div>
+		<? } ?>
+    <br/>
 	</div>				
 </div>

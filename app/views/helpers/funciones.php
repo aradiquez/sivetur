@@ -151,10 +151,15 @@ class FuncionesHelper extends FormHelper {
       }
       return $breadcrum;
       break;
-          break;
       case 5:
-        "";
-          break;
+      $breadcrum = "";
+      $nombre_actual = array_reverse($nombre_actual);
+      foreach ($nombre_actual as $nombre) {
+        $breadcrum .= "<li>".$this->Html->link($nombre['ProgramasCircuito']['name'], array('controller' => 'programas_y_circuitos', 'action' => 'index', $nombre['ProgramasCircuito']['id'], slug($nombre['ProgramasCircuito']['name'])))."</li>";
+        $breadcrum .= "<li>/</li>";
+      }
+      return $breadcrum;
+      break;
       case 6:
         return "Contacto";
           break;    
