@@ -39,6 +39,15 @@ class OfertasController extends AppController{
     $this->set('nodo_actual', array($detail));
   }
   
+  function reservation($id){
+    $this->Oferta->suma_visitas($id);
+    $seccion = $this->getSection(3);
+    $this->set('seccion', $seccion);
+    $params = $this->getParams();
+    $detail = $this->Oferta->find('first', array('conditions' => array('`Oferta`.`id`' => $id)));
+    $this->set('oferta', $detail);
+    $this->set('nodo_actual', array($detail));
+  }
   
   
   function getFilterInformation(){

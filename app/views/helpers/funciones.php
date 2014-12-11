@@ -140,8 +140,12 @@ class FuncionesHelper extends FormHelper {
         return $breadcrum;
         break;
       case 3:
-        "";
-          break;
+      $breadcrum = "";
+      foreach ($nombre_actual as $nombre) {
+        $breadcrum .= "<li>".$this->Html->link($nombre['Oferta']['name'], '#')."</li>";
+      }
+      return $breadcrum;
+      break;
       case 4:
       $breadcrum = "";
       $nombre_actual = array_reverse($nombre_actual);

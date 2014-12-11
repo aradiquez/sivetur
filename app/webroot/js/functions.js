@@ -6,7 +6,9 @@
 
 jQuery(document).ready(function(){
 "use strict";
-	
+	jQuery("#ContactoCheckin, #ContactoCheckout" ).datepicker({
+	  dateFormat: "dd/mm/yy"
+	});
 	// hide #back-top first
 	jQuery("#back-top").hide();
 	

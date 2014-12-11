@@ -1,6 +1,6 @@
 <div class="col-md-4" >	
 	<? $parametros = $this->requestAction('App/getParams'); ?>
-	<div class="pagecontainer2 mt20 needassistancebox">
+	<div class="pagecontainer2 needassistancebox">
 		<div class="cpadding1">
 			<span class="icon-help"></span>
 			<h3 class="opensans">Necesitas ayuda?</h3>
@@ -9,7 +9,7 @@
 		</div>
 	</div><br/>
 	
-	<div class="pagecontainer2 mt20 alsolikebox">
+	<div class="pagecontainer2 alsolikebox">
 		<div class="cpadding1">
 			<span class="icon-location"></span>
 			<h3 class="opensans">Tambi&eacute;n te podr&iacute;a interesar</h3>

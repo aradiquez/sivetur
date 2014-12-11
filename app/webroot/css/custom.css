@@ -1734,7 +1734,11 @@ margin-top:10px;
 background:url('../img/collapsearrow.png') scroll 0 0px no-repeat;
 -webkit-transition:.3s;-moz-transition:.3s;transition:.3s;
 }
-
+.collapsebtn2 h2 { 
+  font-size: 15px;
+  font-weight: 700;
+  display: inline;
+}
 
 .collapsebtn2{
 width:100%;
@@ -2114,11 +2118,11 @@ CAROUFREDSEL DETAILS PAGE
 
 
 
-ul.checklist  {margin:0px;padding:0px;}
-.checklist li {list-style-image:url('../img/check.png'); list-style-position:inside; padding:5px; margin-left:-20px;}
+ul.checklist  {margin:0px;padding:0px; margin-left:20px;}
+.checklist li {list-style-image:url('../img/check.png'); list-style-position:inside; padding:5px; margin-left:-20px; float: left; margin-right:25px; }
 
 ul.checklist2  {margin:0px;padding:0px;}
-.checklist2 li {list-style-image:url('../img/check.png'); list-style-position:inside; padding:0px; margin-left:0px; color:#72bf66;}
+.checklist2 li {list-style-image:url('../img/check.png'); list-style-position:inside; padding:0px; margin-left:0px; color:#72bf66; }
 
 #map-canvas { width:100%; height: 648px; display:none;}
 #map-canvas2 { width:100%; height: 80%; display:none;}

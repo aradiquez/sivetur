@@ -15,17 +15,27 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 		<!-- RIGHT INFO -->
 		<div class="col-md-4 detailsright offset-0">
 			<div class="padding20">
-				<h4 class="lh1"><?=$oferta['Oferta']['name']?></h4>
+				<h1 class="lh1"><?=$oferta['Oferta']['name']?></h1>
 			</div>
 			<div class="line3"></div>
       <br/>
 			<div class="hpadding20">
 				<p><?=$oferta['Oferta']['introduccion']?></p>
 			</div>
+			<div class="line3"></div>
+      <br/>
+			<div class="hpadding20">
+				<p class="opensans slim green2 btn-lg">US $<?=number_format($oferta['Oferta']['precio'], 0)?></p>
+			</div>
+			<div class="line3"></div>
+      <br/>
+			<div class="hpadding20">
+				<p class="opensans slim btn-lg"><strong>Valido hasta:</strong> <?=$funciones->fncFormatoFecha($oferta['Oferta']['end_date'])?></p>
+			</div>
 			<div class="line3 margtop20"></div>
 			<div class="clearfix"></div><br/>
 			<div class="hpadding20">
-				<a href="#" class="booknow margtop20 btnmarg">Reserve ahora</a>
+        <?= $this->Html->link('Reserve ahora', array('controller' => 'ofertas', 'action' => 'reservation', $oferta['Oferta']['id'], slug($oferta['Oferta']['name'])), array('class' => "booknow margtop20 btnmarg"))?>
 			</div>
 		</div>
 		<!-- END OF RIGHT INFO -->
@@ -40,13 +50,13 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 			<div id="summary">
         <br/>
 				<div class="hpadding20">
-				  <?=$oferta['Oferta']['detalle']?>
+				  <?=$oferta['Oferta']['detalle']?> 
         </div>
 				<div class="line4"></div>
 				
 				<!-- Collapse 1 -->	
 				<button type="button" class="collapsebtn2  collapsed" data-toggle="collapse" data-target="#collapse1">
-				  <?= $oferta['ProgramasCircuito']['name']?><span class="collapsearrow"></span>
+				  <h2><?= $oferta['ProgramasCircuito']['name']?></h2><span class="collapsearrow"></span>
 				</button>
 				
 				<div id="collapse1" class="collapse">
@@ -61,35 +71,35 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 
 				<!-- Collapse 6 -->	
 				<button type="button" class="collapsebtn2" data-toggle="collapse" data-target="#collapse6">
-				  Room Amenities <span class="collapsearrow"></span>
+				  <h2>Relacionados</h2> <span class="collapsearrow"></span>
 				</button>
 				
 				<div id="collapse6" class="collapse in">
 					<div class="hpadding20">
-						<div class="col-md-4">
+            <?
+            $total_tag = count($oferta['Tag']);
+            $first_tag = ceil($total_tag / 3);
+            $other_tag = round($total_tag / 3);
+            ?>
+            <? foreach ($oferta['Tag'] as $tags) { } ?>
+
 							<ul class="checklist">
 								<li>Climate control</li>
 								<li>Air conditioning</li>
 								<li>Direct-dial phone</li>
 								<li>Minibar</li>
-							</ul>
-						</div>
-						<div class="col-md-4">
-							<ul class="checklist">
+							
 								<li>Wake-up calls</li>
 								<li>Daily housekeeping</li>
 								<li>Private bathroom</li>
 								<li>Hair dryer</li>	
-							</ul>									
-						</div>	
-						<div class="col-md-4">
-							<ul class="checklist">								
+							
 								<li>Makeup/shaving mirror</li>
 								<li>Shower/tub combination</li>
 								<li>Satellite TV service</li>
 								<li>Electronic/magnetic keys</li>	
 							</ul>									
-						</div>									
+									
 					</div>
 					<div class="clearfix"></div>
           <br/>
