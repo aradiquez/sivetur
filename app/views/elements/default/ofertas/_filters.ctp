@@ -21,7 +21,8 @@
   			<div id="collapse2" class="collapse in">
   				<div class="padding20">
   					<div class="layout-slider wh100percent">
-  					<span class="cstyle09"><input id="Slider1" type="slider" name="Ofertas[price]" value="<?=!empty($price_form_set[0]) ? $price_form_set[0] : $values['menor']['Oferta']['precio'] + 300?>;<?=!empty($price_form_set[1]) ? $price_form_set[1] : $values['menor']['Oferta']['precio'] + 700?>" /></span>
+  					<span class="cstyle09">
+              <input id="Slider1" type="slider" name="Ofertas[price]" value="<?=!empty($price_form_set[0]) ? $price_form_set[0] : $values['menor']['Oferta']['precio'] + 300?>;<?=!empty($price_form_set[1]) ? $price_form_set[1] : $values['menor']['Oferta']['precio'] + 700?>" /></span>
   					</div>
   					<script type="text/javascript" >
             jQuery(document).ready(function(){
@@ -42,15 +43,9 @@
 			
   			<div id="collapse3" class="collapse in">
   				<div class="hpadding20">
-            <? #foreach ($values['tags'] as $tag) { ?> 
-  						<div class="checkbox">
-  						  <label>
-                   <?
-                   echo $form->input('Ofertas.tags', array('type' => 'select', 'multiple'=> 'checkbox', 'label' => false, 'options' => $funciones->sanitize_tags_programs($values['tags'], "Tag")));
-                   ?>
-  						  </label>
-  						</div>
-            <? #} ?>
+             <?
+             echo $form->input('Ofertas.tags', array('multiple'=> 'checkbox', 'label' => false, 'options' => $funciones->sanitize_tags_programs($values['tags'], "Tag")));
+             ?>
   				</div>	
   				<div class="clearfix"></div>					
   			</div>
@@ -64,15 +59,9 @@
   			</button>	
   			<div id="collapse4" class="collapse in">
   				<div class="hpadding20">
-            <? #foreach ($values['programs'] as $tag) { ?> 
-  						<div class="checkbox">
-  						  <label>
-                   <?
-                   echo $form->input('Ofertas.programas', array('type' => 'select', 'multiple'=> 'checkbox', 'label' => false,  'options' => $funciones->sanitize_tags_programs($values['programs'], "ProgramasCircuito")));
-                   ?>
-  						  </label>
-  						</div>
-            <? #} ?>
+             <?
+             echo $form->input('Ofertas.programas', array('type' => 'select', 'multiple'=> 'checkbox', 'label' => false,  'options' => $funciones->sanitize_tags_programs($values['programs'], "ProgramasCircuito")));
+             ?>
   				</div>
   				<div class="clearfix"></div>						
   			</div>	

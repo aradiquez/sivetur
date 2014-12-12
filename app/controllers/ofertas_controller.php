@@ -11,6 +11,7 @@ class OfertasController extends AppController{
                                           'prioridad, visitas' => 'desc'
                                           ),
                           );
+    var $model = 'Oferta';
   
   
 	function index() {
@@ -63,44 +64,60 @@ class OfertasController extends AppController{
   function search() {
     $seccion = $this->getSection(3);
     $this->set('seccion', $seccion);
-    $paginate = array(
-                  'Tag' => array(
-                        'joins' => array(
+    $hoy = date("Y-m-d");   
+    $price_params = explode(";", $this->params['form']['Ofertas']['price']);
+    $options['joins'] = array(
                             array(
                                 'table' => 'ofertas_tags', // or products_categories
                                 'alias' => 'OferTags',
-                                'type' => 'INNER',
                                 'conditions' => array(
                                     'OferTags.tag_id' => $this->params['data']['Ofertas']['tags'],
                                 )
                             )
-                        )
-                     ),
-                   'ProgramasCircuito' => array(
-                         'joins' => array(
-                             array(
-                                 'type' => 'INNER',
-                                 'conditions' => array(
-                                     'ProgramasCircuito.programacircuito_id' =>  $this->params['data']['Ofertas']['programas'],
-                                 )
-                             )
-                         )
-                      )                            
+                        );
+     $options['conditions']= array( 
+                      "Oferta.start_date <= "."'".$hoy."'", 
+                      "Oferta.end_date >= "."'".$hoy."'", 
+                      "Oferta.precio >="."'".$price_params[0]."'",  
+                      "Oferta.precio <="."'".$price_params[1]."'", 
+                      "Oferta.programacircuito_id" =>  $this->params['data']['Ofertas']['programas']
                   );
     
     
     $parameters = $this->getParams();
-    $price_params = explode(";", $this->params['form']['Ofertas']['price']);
-    $hoy = date("Y-m-d");    
-    $fields = array('name', 'introduccion', 'precio');
+    $options['fields'] = array('DISTINCT id', 'name', 'introduccion', 'precio');
     $this->Oferta->unBindModel(array('hasMany' => array('Photos')));
-  	$this->paginate['limit'] = $parameters['Params']['paginacion'];
-    $this->paginate['conditions'] = array('Oferta.start_date <= '."'$hoy'", 'Oferta.end_date >= '."'$hoy'", 'Oferta.precio <=' => $price_params[0], 'Oferta.precio >=' => $price_params[1]);
-    #'Tag.tag_id' => $this->params['data']['Ofertas']['tags'],
-    $this->paginate['fields'] = $fields;
-  	$ofertas = $this->paginate('Oferta');
-    $this->set('parametros', $params);
+  	$options['limit'] = $parameters['Params']['paginacion'];
+  	$ofertas = $this->Oferta->find('all', $options);
+    $this->set('parametros', $parameters);
     $this->set('ofertas', $ofertas);
+    $this->set('nodo_actual', array());
   }
+  
+  function send() {
+    $seccion = $this->getSection(3);
+    $this->set('seccion', $seccion);
+    $parametros = $this->Params->find("first");
+    $detail = $this->Oferta->find('first', array('conditions' => array('`Oferta`.`id`' => $this->data[$this->model]['id'])));
+    $this->set('oferta', $detail);
+    $this->set('nodo_actual', array($detail));
+    
+    if(!empty($this->data)) {
+      $this->{$this->model}->set($this->data);
+
+      if($this->{$this->model}->validates()) {
+        $this->Email->from = $this->data[$this->model]['name'] .' <' . $this->data[$this->model]['email'] . '>';
+        $this->Email->to = $parametros['Params']['correo_general'];
+        $this->Email->subject = 'Contacto para Sivetur S.A.';
+        $this->Email->send($this->data[$this->model]['message']);
+        $this->Session->setFlash('Su mensaje se ha enviado con éxito.');
+        // Display the success.ctp page instead of the form again
+        $this->redirect("index");
+      } else {
+        $this->render('reservation');
+      }
+    }
+  }
+  
 }
 ?>

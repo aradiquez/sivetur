@@ -41,9 +41,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   								<br/>
   								<span class="green size18"><b>US $<?= number_format($offt['Oferta']['precio'], 2)?></b></span><br/>
   								<br/><br/><br/>
-  								<form action="details.html">
-  								 <button class="bookbtn mt1" type="submit">M&aacute;s informaci&oacute;n</button>	
-  								</form>			
+  								<?=$html->link('M&aacute;s informaci&oacute;n', array('controller' => 'ofertas', 'action' => 'detalle',$offt['Oferta']['id'], slug($offt['Oferta']['name'])), array('escape' => false, 'class' => "bookbtn mt1") );?>			
   							</div>
   							<div class="labelleft2">			
   								<b><?= $offt['Oferta']['name']?></b><br/><br/>

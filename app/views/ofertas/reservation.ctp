@@ -15,12 +15,14 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 					<span class="size16px bold dark left">Reservaci&oacute;n</span>
 					<div class="clearfix"></div>
 					<div class="line4"></div>
-					<?php echo $this->Form->create('Contacto', array('controller' => 'contacto', 'action' => 'send')); ?>
+					<?php echo $this->Form->create('Oferta', array('controller' => 'ofertas', 'action' => 'send')); ?>
+            <? echo $this->Form->hidden('Oferta.id', array('value' => $oferta['Oferta']['id'])); ?>
+            <? echo $this->Form->hidden('Oferta.name', array('value' => $oferta['Oferta']['name'])); ?>
   					<div class="col-md-4 textright">
   						<div class="margtop15"><span class="dark">Nombre Completo:</span><span class="red">*</span></div>
   					</div>
   					<div class="col-md-8">
-  						<?php echo $this->Form->input('Contacto.name', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Nombre', 'class' => 'form-control margtop10')); ?>
+  						<?php echo $this->Form->input('Oferta.name', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Nombre', 'class' => 'form-control margtop10')); ?>
   					</div>
   					<div class="clearfix"></div>
 
@@ -28,7 +30,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   						<div class="margtop15"><span class="dark">Tel&eacute;fono:</span><span class="red">*</span></div>
   					</div>
   					<div class="col-md-8">
-  						<?php echo $this->Form->input('Contacto.phone', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Teléfono', 'class' => 'form-control margtop20')); ?>
+  						<?php echo $this->Form->input('Oferta.phone', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Teléfono', 'class' => 'form-control margtop20')); ?>
   					</div>
   					<div class="clearfix"></div>
 				
@@ -36,7 +38,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   						<div class="margtop15"><span class="dark">Email:</span><span class="red">*</span></div>
   					</div>
   					<div class="col-md-8">
-  						<?php echo $this->Form->input('Contacto.email', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Email', 'class' => 'form-control margtop20')); ?>
+  						<?php echo $this->Form->input('Oferta.email', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Email', 'class' => 'form-control margtop20')); ?>
   					</div>
   					<div class="clearfix"></div>
             
@@ -44,10 +46,10 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   						<div class="margtop15"><span class="dark">Fecha de reservaci&oacute;n:</span><span class="red">*</span></div>
   					</div>
   					<div class="col-md-4">
-  						<?php echo $this->Form->input('Contacto.checkin', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Check in', 'class' => 'form-control datepicker margtop20')); ?>
+  						<?php echo $this->Form->input('Oferta.checkin', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Check in', 'class' => 'form-control datepicker margtop20')); ?>
   					</div>
   					<div class="col-md-4">
-  						<?php echo $this->Form->input('Contacto.checkout', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Check out', 'class' => 'form-control datepicker margtop20')); ?>
+  						<?php echo $this->Form->input('Oferta.checkout', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Check out', 'class' => 'form-control datepicker margtop20')); ?>
   					</div>
   					<div class="clearfix"></div>
             
@@ -61,20 +63,14 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
     							<div class="margtop7"><span class="dark">Adultos:</span><span class="red">*</span></div>
     						</div>
 								<div class="col-md-6">
-									<select class="form-control mySelectBoxClass">
-									  <option selected>01 JAN</option>
-									  <option>02 FEB</option>
-									  <option>03 MAR</option>
-									  <option>04 APR</option>
-									  <option>05 MAY</option>
-									  <option>06 JUN</option>
-									  <option>07 JUL</option>
-									  <option>08 AUG</option>
-									  <option>09 SEP</option>
-									  <option>10 OCT</option>
-									  <option>11 NOV</option>
-									  <option>12 DEC</option>
-									</select>						
+									<?
+                  echo $this->Form->input('Oferta.adultos', array(
+                      'options' => array(1, 2, 3, 4, 5),
+                      'empty' => ' ',
+                      'label' => false,
+                      'class' => 'form-control mySelectBoxClass'
+                  ));
+									?>
 								</div>
 							</div>
 							<div class="w50percentlast">
@@ -82,20 +78,14 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
     							<div class="margtop7"><span class="dark">Ni&ntilde;os:</span><span class="red">*</span></div>
     						</div>
 								<div class="col-md-6 right">
-									<select class="form-control mySelectBoxClass">
-									  <option selected>01 JAN</option>
-									  <option>02 FEB</option>
-									  <option>03 MAR</option>
-									  <option>04 APR</option>
-									  <option>05 MAY</option>
-									  <option>06 JUN</option>
-									  <option>07 JUL</option>
-									  <option>08 AUG</option>
-									  <option>09 SEP</option>
-									  <option>10 OCT</option>
-									  <option>11 NOV</option>
-									  <option>12 DEC</option>
-									</select>			
+									<?
+                  echo $this->Form->input('Oferta.Ninos', array(
+                      'options' => array(1, 2, 3, 4, 5),
+                      'empty' => ' ',
+                      'label' => false,
+                      'class' => 'form-control mySelectBoxClass'
+                  ));
+									?>			
 								</div>
 							</div>
 							<div class="clearfix"></div>
@@ -109,7 +99,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   						<div class="margtop15"><span class="dark">Comentarios:</span><span class="red">*</span></div>
   					</div>
   					<div class="col-md-8">
-  						<?php echo $this->Form->input('Contacto.message', array('label' => false, 'cols' => 50, 'rows' => 9, 'class' => 'form-control margtop10')); ?>
+  						<?php echo $this->Form->input('Oferta.message', array('label' => false, 'cols' => 50, 'rows' => 9, 'class' => 'form-control margtop10')); ?>
   					</div>
   					<div class="clearfix"></div>
 			      <br/>

@@ -17,7 +17,17 @@ class Oferta extends AppModel {
         ),
         'message' => array(
             'rule' => 'notEmpty',
-            'message' => 'No has ingresado tu comentario o pregunta.'
+            'message' => 'No has ingresado tu mensaje.'
+        ),
+        'checkin' => array(
+            'rule' => array('date', 'dmy'),
+            'message' => 'fecha de Check in incorrecta',
+            'allowEmpty' => true
+        ),
+        'checkout' => array(
+            'rule' => array('date', 'dmy'),
+            'message' => 'fecha de Check out incorrecta',
+            'allowEmpty' => true
         )
     );
     
