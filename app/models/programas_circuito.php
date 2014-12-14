@@ -5,7 +5,7 @@ class ProgramasCircuito extends AppModel {
      # dependent => true (elimina en cascada )
      var $hasMany = array('Photos' =>
                             array('className'     => 'Photo',
-                                  'conditions'    => array('key' => 2),
+                                  'conditions'    => array('key' => 2, 'first' => '0'),
                                   'order'         => '',
                                   'limit'         => '',
                                   'foreignKey'    => 'generic_id',
@@ -15,7 +15,7 @@ class ProgramasCircuito extends AppModel {
                             ),
                             'FirstPhoto' =>
                               array('className'     => 'Photo',
-                                    'conditions'    => array('key' => 3, 'first' => '1'),
+                                    'conditions'    => array('key' => 2, 'first' => '1'),
                                     'order'         => '',
                                     'limit'         => 1,
                                     'foreignKey'    => 'generic_id',

@@ -13,7 +13,7 @@
 				<div id="pager-wrapper">
 					<div id="pager">
             <? foreach ($photos as $people) {  ?>
-              <?=$this->Html->image('../fotos/fix_img.php?i='.$people['name']."&amp;w=120&amp;h=68",  array('alt'=>$people['details'], 'title'=>$people['details']));?>
+              <?=$this->Html->image('../fotos/fix_img.php?i='.$people['name']."&amp;w=120&amp;h=68",  array('width'=>"120", 'height'=> "68", 'alt'=>$people['details'], 'title'=>$people['details']));?>
             <? } ?>
 					</div>
 				</div>

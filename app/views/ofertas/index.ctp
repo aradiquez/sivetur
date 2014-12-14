@@ -46,7 +46,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   								<?=$html->link('M&aacute;s informaci&oacute;n', array('controller' => 'ofertas', 'action' => 'detalle',$offt['Oferta']['id'], slug($offt['Oferta']['name'])), array('escape' => false, 'class' => "bookbtn mt1") );?>			
   							</div>
   							<div class="labelleft2">			
-  								<b><?= $html->link($offt['Oferta']['name'], array('controller' => 'ofertas', 'action' => 'detalle',$offt['Oferta']['id'], slug($offt['Oferta']['name'])), array('escape' => false) );?></b><br/><br/>
+  							  <?= $html->link("<h3>".$offt['Oferta']['name']."</h3>", array('controller' => 'ofertas', 'action' => 'detalle',$offt['Oferta']['id'], slug($offt['Oferta']['name'])), array('escape' => false) );?><br/><br/>
   								<p class="grey"><?= $offt['Oferta']['introduccion']?></p><br/>
   							</div>
   						</div>

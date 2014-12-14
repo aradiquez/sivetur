@@ -4,7 +4,9 @@
 
 jQuery(function() {
 "use strict";
-	jQuery( ".datepicker" ).datepicker();
+	jQuery( ".datepicker" ).datepicker({
+	  dateFormat: "dd/mm/yy"
+	});
 });
 	
 //------------------------------

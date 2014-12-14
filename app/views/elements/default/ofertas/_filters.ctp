@@ -10,12 +10,12 @@
     <?php echo $this->Form->create('Ofertas', array('url' => array('controller' => 'ofertas', 'action' => 'search'))); ?>
   		<div class="col-md-3 filters offset-0">
 			
-  			<div class="padding20title"><h3 class="opensans dark">Filter by</h3></div>
+  			<div class="padding20title"><h2 class="opensans dark">Buscar ofertas</h2></div>
   			<div class="line2"></div>
 			
   			<!-- Price range -->					
   			<button type="button" class="collapsebtn" data-toggle="collapse" data-target="#collapse2">
-  			  Rango de Precios <span class="collapsearrow"></span>
+  			  <h3>Rango de Precios</h3> <span class="collapsearrow"></span>
   			</button>
 				
   			<div id="collapse2" class="collapse in">
@@ -38,7 +38,7 @@
 			
   			<!-- Acomodations -->		
   			<button type="button" class="collapsebtn" data-toggle="collapse" data-target="#collapse3">
-  			  Tags <span class="collapsearrow"></span>
+  			  <h3>Facilidades</h3> <span class="collapsearrow"></span>
   			</button>				
 			
   			<div id="collapse3" class="collapse in">
@@ -55,7 +55,7 @@
 			
   			<!-- Hotel Preferences -->
   			<button type="button" class="collapsebtn last" data-toggle="collapse" data-target="#collapse4">
-  			  Programas y Circuitos <span class="collapsearrow"></span>
+  			  <h3>Programas y Circuitos</h3> <span class="collapsearrow"></span>
   			</button>	
   			<div id="collapse4" class="collapse in">
   				<div class="hpadding20">

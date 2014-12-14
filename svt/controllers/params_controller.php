@@ -1,5 +1,5 @@
 <?php 
-class ParamsController extends AppController {
+class ParamsController extends AppController {  
 	public function beforeFilter() {
 		parent::beforeFilter();
 	    $session = $this->Session->read($this->sesskey);
@@ -11,7 +11,7 @@ class ParamsController extends AppController {
 
     var $name = "Params";
 	//var $components = array('SdAuth');
-    var $helpers = array('Html', 'Form', 'Tree');
+    var $helpers = array('Html', 'Form', 'Tree', 'Funciones');
 	  var $model = "Param";
     var $uses = array('Param', 'ProgramasCircuito');
     
@@ -34,10 +34,22 @@ class ParamsController extends AppController {
 		  $this->{$this->model}->id = $id;
 	      $this->data = $this->{$this->model}->read();
 	      $data =$this->{$this->model}->read(null, $id);
+        $data['Param']['start_date_last_minute'] = $this->fncFormatoFecha($data['Param']['start_date_last_minute'], "/");
+        $data['Param']['end_date_last_minute'] = $this->fncFormatoFecha($data['Param']['end_date_last_minute'], "/");
+        $data['Param']['start_date_early_booking'] = $this->fncFormatoFecha($data['Param']['start_date_early_booking'], "/");
+        $data['Param']['end_date_early_booking'] = $this->fncFormatoFecha($data['Param']['end_date_early_booking'], "/");   
+        $data['Param']['start_date_hot_deals'] = $this->fncFormatoFecha($data['Param']['start_date_hot_deals'], "/");
+        $data['Param']['end_date_hot_deals'] = $this->fncFormatoFecha($data['Param']['end_date_hot_deals'], "/");  
 	      $this->set($this->name, $data);
         $this->set('paginacionPrioridad', null);
 	   }else {   
 			# valido los datos de entrada
+      $data['Param']['start_date_last_minute'] = $this->fnCambiaf_normal($data['Param']['start_date_last_minute']);
+      $data['Param']['end_date_last_minute'] = $this->fnCambiaf_normal($data['Param']['end_date_last_minute']);
+      $data['Param']['start_date_early_booking'] = $this->fnCambiaf_normal($data['Param']['start_date_early_booking']);
+      $data['Param']['end_date_early_booking'] = $this->fnCambiaf_normal($data['Param']['end_date_early_booking']);   
+      $data['Param']['start_date_hot_deals'] = $this->fnCambiaf_normal($data['Param']['start_date_hot_deals']);
+      $data['Param']['end_date_hot_deals'] = $this->fnCambiaf_normal($data['Param']['end_date_hot_deals']);
 			if ($this->{$this->model}->validates()){	
 				# ademas de ser validos y la imagen no hay errores -> guardo los cambios    
 				$this->{$this->model}->save($this->data);
@@ -52,6 +64,18 @@ class ParamsController extends AppController {
 		}
 	}	
 		
+    
+	function fnCambiaf_normal($fecha) { 
+	    ereg( "([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2})", $fecha, $mifecha); 
+	    $lafecha=$mifecha[3]."/".$mifecha[2]."/".$mifecha[1]; 
+	    return $lafecha; 
+	}
+
+	function fncFormatoFecha($fecha, $separador="/") { 
+	    ereg( "([0-9]{2,4})-([0-9]{1,2})-([0-9]{1,2})", $fecha, $mifecha); 
+	    $lafecha = $mifecha[3].$separador.$mifecha[2].$separador.$mifecha[1]; 
+	    return $lafecha; 
+	}  
 }
 
 ?>

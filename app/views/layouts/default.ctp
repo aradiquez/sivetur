@@ -132,6 +132,9 @@
   	<!-- bin/jquery.slider.min.js -->
     <?php echo $this->Html->script('helper-plugins/jslider/jquery.jslider'); ?>
     
+    <!-- Custom functions -->
+    <?php echo $this->Html->script('fred_slider_functions'); ?>
+    
 	  <!-- Easing -->
 	  <?php echo $this->Html->script('jquery.easing'); ?>
 	
