@@ -34,22 +34,10 @@ class ParamsController extends AppController {
 		  $this->{$this->model}->id = $id;
 	      $this->data = $this->{$this->model}->read();
 	      $data =$this->{$this->model}->read(null, $id);
-        $data['Param']['start_date_last_minute'] = $this->fncFormatoFecha($data['Param']['start_date_last_minute'], "/");
-        $data['Param']['end_date_last_minute'] = $this->fncFormatoFecha($data['Param']['end_date_last_minute'], "/");
-        $data['Param']['start_date_early_booking'] = $this->fncFormatoFecha($data['Param']['start_date_early_booking'], "/");
-        $data['Param']['end_date_early_booking'] = $this->fncFormatoFecha($data['Param']['end_date_early_booking'], "/");   
-        $data['Param']['start_date_hot_deals'] = $this->fncFormatoFecha($data['Param']['start_date_hot_deals'], "/");
-        $data['Param']['end_date_hot_deals'] = $this->fncFormatoFecha($data['Param']['end_date_hot_deals'], "/");  
 	      $this->set($this->name, $data);
         $this->set('paginacionPrioridad', null);
 	   }else {   
 			# valido los datos de entrada
-      $data['Param']['start_date_last_minute'] = $this->fnCambiaf_normal($data['Param']['start_date_last_minute']);
-      $data['Param']['end_date_last_minute'] = $this->fnCambiaf_normal($data['Param']['end_date_last_minute']);
-      $data['Param']['start_date_early_booking'] = $this->fnCambiaf_normal($data['Param']['start_date_early_booking']);
-      $data['Param']['end_date_early_booking'] = $this->fnCambiaf_normal($data['Param']['end_date_early_booking']);   
-      $data['Param']['start_date_hot_deals'] = $this->fnCambiaf_normal($data['Param']['start_date_hot_deals']);
-      $data['Param']['end_date_hot_deals'] = $this->fnCambiaf_normal($data['Param']['end_date_hot_deals']);
 			if ($this->{$this->model}->validates()){	
 				# ademas de ser validos y la imagen no hay errores -> guardo los cambios    
 				$this->{$this->model}->save($this->data);

@@ -1,4 +1,4 @@
-<? $tags = $this->requestAction('/homes/getTagsForSearch'); ?>
+      <? $tags = $this->requestAction('/homes/getTagsForSearch'); ?>
           <?php echo $this->Form->create(null, array('url' => array('controller' => 'ofertas', 'action' => 'search'))); ?>
 					<div class="col-md-4 scolleft">
             <div class="w50percent">
@@ -7,58 +7,27 @@
 								<div class="radio">
 								  <label>
                     <?
-                    echo $form->input($tag['Tag']['name'], array(
+                    echo $this->Form->input('Ofertas.tags', array(
                         'type' => 'radio',
-                        'id' => "tag_".$tag['Tag']['id'],
-                        'name' => "radio_options",
-                        'options' => $tag['Tag']['name']
-                    ));
+                        'options' => array($tag['Tag']['id'] => $tag['Tag']['name']),
+                        'hiddenField' => false
+                    ), array());
                     ?>
 								  </label>
 								</div>
                 
                 <?= ($count == 7 ? '</div><div class="w50percentlast">' : '');?>
-               <? $count++; } ?>
+               <? $count++; }  ?>
 							</div>	
 							
 							<div class="clearfix"></div><br/>
 							
 							<!-- HOTELS TAB -->
 							<div class="hotelstab">
-								<div class="w50percentlast">	
-									<div class="wh90percent textleft right">
-										<div class="w50percent">
-											<div class="wh90percent textleft left">
-												<span class="opensans size13"><b>Adult</b></span>
-												<select class="form-control mySelectBoxClass">
-												  <option>1</option>
-												  <option>2</option>
-												  <option>3</option>
-												  <option>4</option>
-												  <option>5</option>
-												</select>
-											</div>
-										</div>							
-										<div class="w50percentlast">
-											<div class="wh90percent textleft right">
-											<span class="opensans size13"><b>Child</b></span>
-												<select class="form-control mySelectBoxClass">
-												  <option selected>0</option>
-												  <option>1</option>
-												  <option>2</option>
-												  <option>3</option>
-												  <option>4</option>
-												  <option>5</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								</div>
                 <div class="clearfix"></div>
                 <br/>
-								<span class="opensans size18">Where do you want to go?</span>
-								<input type="text" class="form-control" placeholder="Greece">
-
+								<span class="opensans size18">Donde quiere viajar?</span>
+                <?php echo $this->Form->input('Ofertas.criterion', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Machu Pichu', 'class' => 'form-control')); ?>
 								<? echo $this->Form->button(__("_BUSCAR", true), array('type'=>'submit', 'class'=>"btn-search3"));?>
 							</div>
 							<!-- END OF HOTELS TAB -->

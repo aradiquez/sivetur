@@ -111,10 +111,15 @@ img.logo {width:120px;}
 .slim{font-weight:300;}
 .normal{font-weight:400;}
 
+.shadow {
+  text-shadow: 1px 1px #CCC;
+}
 
 .bold{font-weight:700;}
 
-
+h3.lh1, h4.lh1 {
+  font-size: 13px;
+}
 .lh1{line-height:7px !important;}
 .lh2{line-height:15px;}
 .lh3{line-height:60px;}
@@ -1524,6 +1529,14 @@ img.fwimg{width:100%;}
 }
 
 .blacklable{height:75px; width:100%; padding:10px 10px 0 20px; display:block; background:rgba(24,24,24,0.9);}
+.blacklable h2 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+.blacklable h3 {
+  margin-top: 0;
+  font-size: 14px;
+}
 
 .lbl{position:relative;}
 .smallblacklabel{position:absolute; left:0; bottom:0; padding:5px 20px; font-family:'Lato';Font-weight:700; text-transform:uppercase; font-size:16px; color:white; background:rgba(24,24,24,0.9); }

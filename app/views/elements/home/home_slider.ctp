@@ -15,8 +15,9 @@
 									<!-- papercut fade turnoff flyin slideright slideleft slideup slidedown-->
 									<? foreach ($infoSlide as $slide){  ?>
   									<!-- FADE -->
-  									<li data-transition="fade" data-slotamount="1" data-masterspeed="300"> 										
-  										<?=$html->image("../fotos/".$slide['FirstPhoto'][0]['name'], array('alt' => $slide['FirstPhoto'][0]['details']))?>
+  									<li data-transition="fade" data-slotamount="1" data-masterspeed="300"> 		
+                      <?=$this->Html->image( '../fotos/fix_img.php?i='.$slide['FirstPhoto'][0]['name']."&amp;w=1000&amp;h=446&amp;radius=0",  array('alt'=>$slide['FirstPhoto'][0]['details']))?>								
+  										<?#$html->image("../fotos/".$slide['FirstPhoto'][0]['name'], array('alt' => $slide['FirstPhoto'][0]['details']))?>
   										<div class="tp-caption scrolleffect sft"
   											 data-x="<?=$data_x[rand(0, 3)]?>"
   											 data-y="100"
@@ -25,7 +26,7 @@
   											 data-easing="easeOutExpo"  >
   											 <div class="sboxpurple">
   												<span class="lato size100 slim caps white"><?=$slide["Oferta"]['name']?></span><br/>
-  												<span class="lato size20 normal caps white">from</span><br/><br/>
+  												<span class="lato size20 normal caps white">desde</span><br/><br/>
   												<span class="lato size48 slim uppercase yellow">$<?=number_format($slide["Oferta"]['precio'], 0)?></span><br/>
   											 </div>
   										</div>	
@@ -36,8 +37,8 @@
   											 data-start="800"
   											 data-easing="easeOutExpo"  >
   											<div class="blacklable">
-  											<h4 class="lato bold white"><?=$slide["Oferta"]['name']?> from <span class="green">$<?=number_format($slide["Oferta"]['precio'], 0)?></span></h4>
-  											<h5 class="lato grey mt-10"><?=$text->truncate($slide["Oferta"]['introduccion'], 100)?></h5>
+  											<h2 class="lato bold white"><?=$slide["Oferta"]['name']?> desde <span class="green">$<?=number_format($slide["Oferta"]['precio'], 0)?></span></h4>
+  											<h3 class="lato grey mt-10"><?=$text->truncate($slide["Oferta"]['introduccion'], 100)?></h5>
   											</div>
   										</div>	
   									</li>

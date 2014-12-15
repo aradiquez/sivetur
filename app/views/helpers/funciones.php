@@ -3,8 +3,6 @@
  * created by: Esteban Cordero
  * Helper created for different functions need it on the system, this functions will usually be available on all the system
  */
-?> 
-<?
 class FuncionesHelper extends FormHelper {
 	var $helpers = array('Form','Html');
     var $mime_types = array('jpg','jpeg','pjpeg','gif','png');
@@ -172,4 +170,3 @@ class FuncionesHelper extends FormHelper {
   }
   
 }
-?>

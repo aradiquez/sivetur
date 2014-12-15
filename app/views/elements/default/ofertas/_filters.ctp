@@ -22,7 +22,7 @@
   				<div class="padding20">
   					<div class="layout-slider wh100percent">
   					<span class="cstyle09">
-              <input id="Slider1" type="slider" name="Ofertas[price]" value="<?=!empty($price_form_set[0]) ? $price_form_set[0] : $values['menor']['Oferta']['precio'] + 300?>;<?=!empty($price_form_set[1]) ? $price_form_set[1] : $values['menor']['Oferta']['precio'] + 700?>" /></span>
+              <input id="Slider1" type="slider" name="Ofertas[price]" value="<?=!empty($price_form_set[0]) ? $price_form_set[0] : 0?>;<?=!empty($price_form_set[1]) ? $price_form_set[1] : 0?>" /></span>
   					</div>
   					<script type="text/javascript" >
             jQuery(document).ready(function(){
@@ -68,11 +68,25 @@
   			<!-- End of Hotel Preferences -->
 			
   			<div class="line2"></div>
+  			
+  			<!-- Search Words -->
+  			<button type="button" class="collapsebtn last" data-toggle="collapse" data-target="#collapse5">
+  			  <h3>Donde quiere viajar?</h3> <span class="collapsearrow"></span>
+  			</button>	
+  			<div id="collapse5" class="collapse in">
+  				<div class="hpadding20">
+            <br/>
+            <?php echo $this->Form->input('Ofertas.criterion', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Machu Pichu', 'class' => 'form-control')); ?> 
+  				</div>
+  				<div class="clearfix"></div>						
+  			</div>	
+  			<!-- End of Hotel Preferences -->
+  			<br/>
+  			<br/>
   			<div class="clearfix"></div>
-  			<br/>
-  			<br/>
 			  <? echo $this->Form->button(__("_BUSCAR", true), array('type'=>'submit', 'class'=>"pull-right btn-search3 "));?>
-			
+  			<div class="clearfix"></div>
+        <div class="line2"></div>
   		</div>
   		<!-- END OF FILTERS -->
     <?php echo $this->Form->end(); ?>

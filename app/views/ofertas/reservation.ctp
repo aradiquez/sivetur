@@ -43,7 +43,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
   					<div class="clearfix"></div>
             
             <div class="col-md-4 textright">
-  						<div class="margtop15"><span class="dark">Fecha de reservaci&oacute;n:</span><span class="red">*</span></div>
+  						<div class="margtop15"><span class="dark">Fecha de reservaci&oacute;n:</span></div>
   					</div>
   					<div class="col-md-4">
   						<?php echo $this->Form->input('Oferta.checkin', array('label' => false, 'maxlength' => 100, 'placeholder' => 'Check in', 'class' => 'form-control datepicker margtop20')); ?>
@@ -60,12 +60,12 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 						<div class="col-md-8">	
 							<div class="w50percent">
     						<div class="col-md-6 textright">
-    							<div class="margtop7"><span class="dark">Adultos:</span><span class="red">*</span></div>
+    							<div class="margtop7"><span class="dark">Adultos:</span></div>
     						</div>
 								<div class="col-md-6">
 									<?
                   echo $this->Form->input('Oferta.adultos', array(
-                      'options' => array(1, 2, 3, 4, 5),
+                      'options' => array(1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 'mas' => 'Mas de 5'),
                       'empty' => ' ',
                       'label' => false,
                       'class' => 'form-control mySelectBoxClass'
@@ -80,7 +80,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
 								<div class="col-md-6 right">
 									<?
                   echo $this->Form->input('Oferta.Ninos', array(
-                      'options' => array(1, 2, 3, 4, 5),
+                      'options' => array(1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 'mas' => 'Mas de 5'),
                       'empty' => ' ',
                       'label' => false,
                       'class' => 'form-control mySelectBoxClass'

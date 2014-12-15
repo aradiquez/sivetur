@@ -11,10 +11,10 @@
 					<ul id="foo2">
 						<? foreach ($feature_offers as $feature) { ?>
 							<li>
-								<?= $this->Html->link($this->Html->image( '../fotos/img.php?i=tn_'.$feature['FirstPhoto'][0]['name']."&amp;w=155&amp;h=179&amp;radius=0",  array('alt'=>$feature['Oferta']['name'], 'title'=>$feature['Oferta']['name'], 'class' => 'dealthumb')), array('controller' => 'ofertas', 'action' => 'detalle', $feature['Oferta']['id'], slug($feature['Oferta']['name'])), array('escape' => false), null, false);?>
+								<?= $this->Html->link($this->Html->image( '../fotos/fix_img.php?i='.$feature['FirstPhoto'][0]['name']."&amp;w=255&amp;h=179&amp;radius=0",  array('alt'=>$feature['Oferta']['name'], 'title'=>$feature['Oferta']['name'])), array('controller' => 'ofertas', 'action' => 'detalle', $feature['Oferta']['id'], slug($feature['Oferta']['name'])), array('escape' => false), null, false);?>
 								<div class="m1">
-									<h6 class="lh1 dark"><strong><?= $this->Html->link($feature['Oferta']['name'], array('controller' => 'ofertas', 'action' => 'detalle', $feature['Oferta']['id'], slug($feature['Oferta']['name'])), array('escape' => false), null, false);?></strong></h6>
-									<h6 class="lh1 green"><?=$text->truncate($feature["Oferta"]['introduccion'], 20)?></h6>							
+									<h3 class="lh1 dark"><strong><?= $this->Html->link($feature['Oferta']['name'], array('controller' => 'ofertas', 'action' => 'detalle', $feature['Oferta']['id'], slug($feature['Oferta']['name'])), array('escape' => false), null, false);?></strong></h3>
+									<h4 class="lh1 green"><?=$text->truncate($feature["Oferta"]['introduccion'], 20)?></h4>							
 								</div>							
 							</li>	
 						<? } ?>				

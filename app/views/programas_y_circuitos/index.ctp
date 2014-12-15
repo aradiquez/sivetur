@@ -58,7 +58,7 @@ echo $html->meta('description', $seccion['Section']['description'].__('_DESCRIPC
                   <? if (!empty($offt['FirstPhoto'][0])) { ?>
           					<div class="col-md-3 offset-0">
           						<div class="listitem2">
-                        <?=$html->link($this->Html->image('../fotos/fix_img.php?i='.$offt['FirstPhoto'][0]['name']."&amp;w=271&amp;h=210",  array('alt'=>$offt['ProgramasCircuito']['name'], 'title'=>$offt['ProgramasCircuito']['name'])), "../fotos/".$offt['FirstPhoto'][0]['name'], array('data-footer'=> "".$offt['ProgramasCircuito']['introduccion'], 'data-title' => "".$offt['ProgramasCircuito']['name'], 'data-gallery' => "multiimages", 'data-toggle'=>"lightbox", 'escape' => false) );?>
+                        <?=$html->link($this->Html->image('../fotos/fix_img.php?i='.$offt['FirstPhoto'][0]['name']."&amp;w=271&amp;h=210",  array('alt'=>$offt['ProgramasCircuito']['name'], 'title'=>$offt['ProgramasCircuito']['name'])), array('controller' => 'programas_y_circuitos', 'action' => 'index',$offt['ProgramasCircuito']['id'], slug($offt['ProgramasCircuito']['name'])), array('escape' => false) );?>
           						</div>
           					</div>
                     <div class="col-md-9 offset-0">

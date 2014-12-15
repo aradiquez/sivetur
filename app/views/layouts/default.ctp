@@ -77,7 +77,12 @@
 
 	<!-- CONTENT -->
 	<div class="container">
-		<?php echo $this->Session->flash(); ?>
+    <? if ($this->Session->check('Message.flash')) {?>
+      <br/>
+      <div class="alert alert-success" role="alert">
+        <?php echo $this->Session->flash(); ?>
+      </div>  
+    <? } ?>
 		<?php echo $content_for_layout; ?>
 	</div>
 	<!-- END OF CONTENT -->

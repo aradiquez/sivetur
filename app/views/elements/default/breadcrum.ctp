@@ -1,6 +1,6 @@
 	<div class="container breadcrub">
 	    <div>
-			<a class="homebtn left" href="#"></a>
+			<a class="homebtn left" href="/"></a>
 			<div class="left">
 				<ul class="bcrumbs">
 					<li>/</li>
@@ -9,7 +9,7 @@
 					<?= $funciones->handle_breadcrum($seccion['Section']['id'], $nodo_actual)?>
 				</ul>				
 			</div>
-			<a class="backbtn right" href="#"></a>
+			<a class="backbtn right" href="#" onclick="javascript: window.history.go(-1);"></a>
 		</div>
 		<div class="clearfix"></div>
 		<div class="brlines"></div>
