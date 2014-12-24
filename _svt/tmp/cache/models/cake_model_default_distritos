@@ -1,2 +1,0 @@
-1258060345
-a:3:{s:2:"id";a:5:{s:4:"type";s:5:"float";s:4:"null";b:0;s:7:"default";N;s:6:"length";N;s:3:"key";s:7:"primary";}s:9:"canton_id";a:4:{s:4:"type";s:5:"float";s:4:"null";b:0;s:7:"default";N;s:6:"length";N;}s:4:"name";a:4:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:25;}}

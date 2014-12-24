@@ -4,7 +4,7 @@
     font-size: 1.2em;
     color: #533b27;
     background-color: #f2f2f2;
-    background: url("http://localhost:8888/svtour/svt/img/login-bg.jpg") #f2f2f2 no-repeat top center;
+    background: url("www.siveturcr.com/svt/img/login-bg.jpg") #f2f2f2 no-repeat top center;
     width: 100%;
     height: 100%;
   }
@@ -63,8 +63,8 @@
               <td>
                 <table>
                   <tr>
-                    <td style="width: 50%"><img src="http://localhost:8888/svtour/svt/img/logo_email.png" style="float: left; display: block;"  /></td>
-                    <td style="width: 50%"><img src="http://localhost:8888/svtour/svt/img/avianca_email.png" style="float: right; display: block; padding-left: 40px;" /></td>
+                    <td style="width: 50%"><img src="http://www.siveturcr.com/svt/img/logo_email.png" style="float: left; display: block;"  /></td>
+                    <td style="width: 50%"><img src="http://www.siveturcr.com/svt/img/avianca_email.png" style="float: right; display: block; padding-left: 40px;" /></td>
                   </tr>
                 </table>
               </td>
@@ -101,7 +101,7 @@
             <tr>
               <td><table style="font-size:11px">
                   <tr>
-                    <td align="left" width="450">© <?=date("Y")?> <a href="http://www.sivetur.com">Sivetur S.A.</a></td>
+                    <td align="left" width="450">© <?=date("Y")?> <a href="http://www.siveturcr.com">Sivetur S.A.</a></td>
                   </tr>
                   <tr>
                     <td align="right" colspan="2"><br/>

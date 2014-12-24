@@ -27,7 +27,7 @@
   					<script type="text/javascript" >
             jQuery(document).ready(function(){
             "use strict";
-  					  jQuery("#Slider1").slider({ from: <?=$values['menor']['Oferta']['precio']?>, to: <?=$values['mayor']['Oferta']['precio']?>, step: 5, smooth: true, round: 0, dimension: "&nbsp;$", skin: "round" });
+  					  jQuery("#Slider1").slider({ from: <?=!empty($values['menor']['Oferta']['precio']) ? $values['menor']['Oferta']['precio'] : 0?>, to: <?=!empty($values['mayor']['Oferta']['precio']) ? $values['mayor']['Oferta']['precio'] : 0?>, step: 5, smooth: true, round: 0, dimension: "&nbsp;$", skin: "round" });
             });
   					</script>
   				</div>
