@@ -1,4 +1,4 @@
-<? $this->layout='home';?>
+<? $this->layout='soon';?>
 <? 
 $seccion = $this->requestAction('/homes/getSection/1');
 
